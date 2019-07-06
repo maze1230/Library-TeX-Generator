@@ -6,7 +6,7 @@ def get_option():
     argparser = ArgumentParser(description='指定したテンプレートTeXファイルの"%%%INSERT HERE%%%"部分に別ファイルで指定したライブラリファイルを挿入する。')
     argparser.add_argument('-t', '--template', default='template.tex',
                            help='テンプレートとなるTeXファイル')
-    argparser.add_argument('-f', '--file', default='library.toml',
+    argparser.add_argument('-l', '--library', default='library.toml',
                            help='使いたいライブラリのファイルをまとめたtomlファイル')
     argparser.add_argument('-o', '--output', default='library.tex',
                            help='出力するファイルの名前')
