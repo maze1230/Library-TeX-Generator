@@ -34,4 +34,4 @@ if __name__ == '__main__':
                 for lib in libs['file']:
                     wf.write(title_style)
                     wf.write(lib['name']+'\n')
-                    wf.write('\\myMintedfile{'+lib['file']+'}\n')
+                    wf.write('\\myMintedfile{'+lib['file_path']+'}\n')
