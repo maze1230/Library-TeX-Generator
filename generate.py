@@ -25,19 +25,13 @@ if __name__ == '__main__':
         for l in rf.readlines():
             if not l.startswith('%%%INSERT HERE%%%'):
                 wf.write(l)
-                print(l)
                 continue
 
             for libs in dict_toml['library']:
                 wf.write(category_style)
                 wf.write(libs['category']+'\\\\\n')
-                print(category_style)
-                print(libs['category'])
 
                 for lib in libs['file']:
                     wf.write(title_style)
                     wf.write(lib['name']+'\n')
                     wf.write('\\myMintedfile{'+lib['file']+'}\n')
-                    print(title_style)
-                    print(lib['name'])
-                    print('\\myMintedfile{'+lib['file']+'}')
