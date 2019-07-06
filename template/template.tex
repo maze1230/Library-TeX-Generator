@@ -1,0 +1,40 @@
+\documentclass[twocolumn, autodetect-engine,8pt]{jsarticle}
+\usepackage[cache=false]{minted}
+\usepackage[top=15truemm,bottom=5truemm,left=5truemm,right=5truemm]{geometry}
+\usepackage{color}
+\usepackage{fancyhdr}
+
+\usemintedstyle{vs}
+\setlength{\columnseprule}{0.1pt}
+\definecolor{myRuleColor}{rgb}{0.8, 0.8, 0.8}
+
+\newminted[myMinted]{c++}{
+  fontfamily=courier,
+  fontsize=\footnotesize
+  breaklines,
+  breakanywhere,
+  frame=lines,
+  rulecolor=myRuleColor,
+  tabsize=2
+}
+
+\newmintedfile[myMintedfile]{c++}{
+  fontfamily=courier,
+  fontsize=\footnotesize,
+  breaklines,
+  breakanywhere,
+  frame=lines,
+  rulecolor=myRuleColor,
+  tabsize=2
+}
+\renewcommand{\theFancyVerbLine}
+             {\sffamily \textcolor[rgb]{0.5,0.5,1.0}{\small \arabic{FancyVerbLine}}}
+
+\pagestyle{fancy}
+\lhead{Lesages(Keio University)}
+\rhead{\thepage}
+
+\begin{document}
+\renewcommand{\baselinestretch}{0.8}
+%%%INSERT HERE%%%
+\end{document}
