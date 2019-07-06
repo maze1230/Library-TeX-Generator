@@ -17,7 +17,7 @@ def get_option():
 if __name__ == '__main__':
     args = get_option()
 
-    dict_toml = toml.load(open(args.file))
+    dict_toml = toml.load(open(args.library))
     category_style = '\\noindent \\large\n'
     title_style = '\\noindent \\small\n'
 
