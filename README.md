@@ -26,25 +26,25 @@ toml形式でどのファイルからPDFを作りたいか指定する
 [[library]]
 category = "Math"
 
-[[library.file]]
-name = "行列"
-file_path = "lib/Math/Matrix.cpp"
+	[[library.file]]
+	name = "行列"
+	path = "lib/Math/Matrix.cpp"
 
 [[library]]
 category = "Data Structure"
 
-[[library.file]]
-name = "セグメントツリー"
-file_path = "lib/DataStructure/SegmentTree.cpp"
+	[[library.file]]
+	name = "セグメントツリー"
+	path = "lib/DataStructure/SegmentTree.cpp"
 
-[[library.file]]
-name = "遅延セグメントツリー"
-file_path = "lib/DataStructure/LazySegmentTree.cpp"
+	[[library.file]]
+	name = "遅延セグメントツリー"
+	path = "lib/DataStructure/LazySegmentTree.cpp"
 ```
 
 みたいな感じ  
 ```[[library]]```でcategoryを書いて、その下にそのカテゴリのファイルを```[[library.file]]```で並べる.  
-```[[library.file]]```の情報は```name```と```file_path```.  
+```[[library.file]]```の情報は```name```と```path```.  
 パスは実行する場所からの相対パスか絶対パスを指定すること.
 
 ## Run
