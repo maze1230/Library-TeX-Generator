@@ -13,6 +13,7 @@
 ## How to use
 
 ### template.tex
+
 頑張って読んで好きな設定にしてください.  
 34行目付近の```\lhead```のところでヘッダの左側にチーム名を載せることができる.  
 「%%%INSERT HERE%%%」と書かれている行にライブラリのファイルが挿入される.
@@ -21,25 +22,26 @@
 
 toml形式でどのファイルからPDFを作りたいか指定する  
 
-####  書式
+#### 書式
+
 ```toml
 [[library]]
 category = "Math"
 
-	[[library.file]]
-	name = "行列"
-	path = "lib/Math/Matrix/Matrix.cpp"
+  [[library.file]]
+  name = "行列"
+  path = "lib/Math/Matrix/Matrix.cpp"
 
 [[library]]
 category = "Data Structure"
 
-	[[library.dir]]
-	name = "SegmentTree/"
-	path = "lib/Tree/SegmentTree"
+  [[library.dir]]
+  name = "SegmentTree/"
+  path = "lib/Tree/SegmentTree"
 
-	[[library.file]]
-	name = "SparseTable"
-	path = "lib/DataStructure/SparseTable.cpp"
+  [[library.file]]
+  name = "SparseTable"
+  path = "lib/DataStructure/SparseTable.cpp"
 ```
 
 みたいな感じ  

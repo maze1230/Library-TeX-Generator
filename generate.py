@@ -52,7 +52,7 @@ if __name__ == '__main__':
                     for dir in libs['dir']:
                         if not os.path.isdir(dir['path']):
                             continue
-                    
+
                         for lib in os.listdir(dir['path']):
                             if not os.path.isfile(os.path.join(dir['path'], lib)):
                                 continue
@@ -60,4 +60,3 @@ if __name__ == '__main__':
                                 continue
                             path = os.path.abspath(os.path.join(dir['path'], lib))
                             write_lib_file(wf, dir['name']+lib, path)
-
