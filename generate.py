@@ -1,5 +1,6 @@
 from argparse import ArgumentParser
 import toml
+import os
 
 
 def get_option():
@@ -14,12 +15,21 @@ def get_option():
     return argparser.parse_args()
 
 
+category_style = '\\noindent \\large\n'
+title_style = '\\noindent \\small\n'
+
+
+def write_lib_file(fp, name, path):
+    fp.write(title_style)
+    name = name.replace('_', '\_')
+    fp.write(name+'\n')
+    fp.write('\\myMintedfile{'+path+'}\n')
+
+
 if __name__ == '__main__':
     args = get_option()
 
     dict_toml = toml.load(open(args.library))
-    category_style = '\\noindent \\large\n'
-    title_style = '\\noindent \\small\n'
 
     with open(args.template, 'r') as rf, open(args.output, 'w') as wf:
         for l in rf.readlines():
@@ -31,7 +41,23 @@ if __name__ == '__main__':
                 wf.write(category_style)
                 wf.write(libs['category']+'\\\\\n')
 
-                for lib in libs['file']:
-                    wf.write(title_style)
-                    wf.write(lib['name']+'\n')
-                    wf.write('\\myMintedfile{'+lib['path']+'}\n')
+                if 'file' in libs:
+                    for lib in libs['file']:
+                        if not os.path.isfile(lib['path']):
+                            continue
+                        path = os.path.abspath(lib['path'])
+                        write_lib_file(wf, lib['name'], path)
+
+                if 'dir' in libs:
+                    for dir in libs['dir']:
+                        if not os.path.isdir(dir['path']):
+                            continue
+                    
+                        for lib in os.listdir(dir['path']):
+                            if not os.path.isfile(os.path.join(dir['path'], lib)):
+                                continue
+                            if not os.path.splitext(lib)[1] == '.cpp':
+                                continue
+                            path = os.path.abspath(os.path.join(dir['path'], lib))
+                            write_lib_file(wf, dir['name']+lib, path)
+

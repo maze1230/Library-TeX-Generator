@@ -28,18 +28,18 @@ category = "Math"
 
 	[[library.file]]
 	name = "行列"
-	path = "lib/Math/Matrix.cpp"
+	path = "lib/Math/Matrix/Matrix.cpp"
 
 [[library]]
 category = "Data Structure"
 
-	[[library.file]]
-	name = "セグメントツリー"
-	path = "lib/DataStructure/SegmentTree.cpp"
+	[[library.dir]]
+	name = "SegmentTree/"
+	path = "lib/Tree/SegmentTree"
 
 	[[library.file]]
-	name = "遅延セグメントツリー"
-	path = "lib/DataStructure/LazySegmentTree.cpp"
+	name = "SparseTable"
+	path = "lib/DataStructure/SparseTable.cpp"
 ```
 
 みたいな感じ  
