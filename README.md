@@ -58,4 +58,7 @@ python generate.py --template "ベースになるTeXファイル" --library "上
 
 ## Example
 
-https://github.com/maze1230/Library-TeX-Generator/blob/master/sample/lib.pdf
+現在のtemplate.texはボールドになっているので、細字にしたければ```\begin{bfseries} \end{bfseries}```の行を消してください
+
+[細字](https://github.com/maze1230/Library-TeX-Generator/blob/master/sample/lib.pdf)
+[ボールド](https://github.com/maze1230/Library-TeX-Generator/blob/master/sample/test.pdf)
