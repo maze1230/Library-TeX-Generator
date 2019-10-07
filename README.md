@@ -57,7 +57,7 @@ category = "Data Structure"
 python generate.py --template "ベースになるTeXファイル" --library "上のように記述したTOMLファイル" --output "結果として出力するTeXファイル"
 ```
 
-できたTeXファイルのコンパイルは頑張ってください
+できたTeXファイルのコンパイルは頑張ってください  
 UPDATE: platexとdvipdfmxがある環境では`--pdf(-pdf)`をオプションとしてつけることでPDFファイルを作成できるようにしました
 
 ## Example
