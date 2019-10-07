@@ -58,6 +58,7 @@ python generate.py --template "ベースになるTeXファイル" --library "上
 ```
 
 できたTeXファイルのコンパイルは頑張ってください
+UPDATE: platexとdvipdfmxがある環境では`--pdf(-pdf)`をオプションとしてつけることでPDFファイルを作成できるようにしました
 
 ## Example
 
