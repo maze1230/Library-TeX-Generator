@@ -67,6 +67,6 @@ if __name__ == '__main__':
     
     if args.pdf:
         filename = args.output.split('.')[0]
-        subprocess.call(['platex', '-shell-escape', filename+'.tex'])
+        subprocess.call(['platex', '-kanji=utf8', '-file-line-error', '-shell-escape', filename+'.tex'])
         subprocess.call(['dvipdfmx', filename+'.dvi'])
         subprocess.call(['rm', filename+'.dvi', filename+'.log', filename+'.aux'])
