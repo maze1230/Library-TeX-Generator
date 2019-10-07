@@ -1,6 +1,7 @@
 from argparse import ArgumentParser
 import toml
 import os
+import subprocess
 
 
 def get_option():
@@ -11,6 +12,8 @@ def get_option():
                            help='使いたいライブラリのファイルをまとめたtomlファイル')
     argparser.add_argument('-o', '--output', default='library.tex',
                            help='出力するファイルの名前')
+    argparser.add_argument('-p', '--pdf', help="コンパイルしてPDFファイルを作成する",
+                           action="store_true")
 
     return argparser.parse_args()
 
@@ -44,6 +47,7 @@ if __name__ == '__main__':
                 if 'file' in libs:
                     for lib in libs['file']:
                         if not os.path.isfile(lib['path']):
+                            print("Failed to find the file: {}\n    name: {}".format(lib['path'], lib['name']))
                             continue
                         path = os.path.abspath(lib['path'])
                         write_lib_file(wf, lib['name'], path)
@@ -60,3 +64,9 @@ if __name__ == '__main__':
                                 continue
                             path = os.path.abspath(os.path.join(dir['path'], lib))
                             write_lib_file(wf, dir['name']+lib, path)
+    
+    if args.pdf:
+        filename = args.output.split('.')[0]
+        subprocess.call(['platex', '-shell-escape', filename+'.tex'])
+        subprocess.call(['dvipdfmx', filename+'.dvi'])
+        subprocess.call(['rm', filename+'.dvi', filename+'.log', filename+'.aux'])

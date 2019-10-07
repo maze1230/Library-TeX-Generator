@@ -6,6 +6,7 @@
 
 - LaTeX環境
   - -shell-escapeオプション付きでのコンパイル
+	- platexとdvipdfmxがあればPDFまで生成する
 
 - Python3
   - pip install toml
