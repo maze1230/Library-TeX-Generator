@@ -89,5 +89,7 @@ if __name__ == '__main__':
             filename + '.tex'
         ])
         subprocess.call(['dvipdfmx', filename + '.dvi'])
-        subprocess.call(
-            ['rm', filename + '.dvi', filename + '.log', filename + '.aux'])
+        subprocess.call([
+            'rm', filename + '.dvi', filename + '.log', filename + '.aux',
+            filename + '.toc'
+        ])
