@@ -9,7 +9,7 @@
 	- platexとdvipdfmxがあればPDFまで生成する
 
 - Python3
-  - pip install toml
+  - pip3 install toml pygments
 
 ## How to use
 

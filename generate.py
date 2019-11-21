@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from argparse import ArgumentParser
 import toml
 import os
@@ -85,7 +86,11 @@ if __name__ == '__main__':
             filename + '.tex'
         ])
         subprocess.call([
-            'platex', '-kanji=utf8', '-file-line-error', '-shell-escape',
+            'uplatex', '-kanji=utf8', '-file-line-error', '-shell-escape',
+            filename + '.tex'
+        ])
+        subprocess.call([
+            'uplatex', '-kanji=utf8', '-file-line-error', '-shell-escape',
             filename + '.tex'
         ])
         subprocess.call(['dvipdfmx', filename + '.dvi'])
